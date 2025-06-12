@@ -44,11 +44,9 @@ async function handleCommand(client, message) {
     if (command === 'stop') {
         isSpamming = false;
         sendWebhook(message.author, message.channel.id, 'Stop');
-        // Removed direct channel message as per user request
     } else if (command === 'resume') {
         isSpamming = true;
         sendWebhook(message.author, message.channel.id, 'Resume');
-        // Removed direct channel message as per user request
     }
 }
 
