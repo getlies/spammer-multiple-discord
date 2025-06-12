@@ -1,6 +1,5 @@
 const config = require("../setup/config.js");
 const say = require("./commands/say.js"); 
-const autoWakeup = require("./utils/autoWakeup.js"); 
 const spamControl = require("./utils/spamControl");
 
 function handleCommands(client, clients) {
@@ -10,8 +9,6 @@ function handleCommands(client, clients) {
 
     client.on('messageCreate', message => {
         const isAllowed = jockieIds && jockieIds.includes(message.author.id);
-
-    autoWakeup(client, message); 
 
         if (message.content.startsWith(`${prefix}say `)) {
             const args = message.content.split(' ').slice(1);
