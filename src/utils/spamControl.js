@@ -5,7 +5,7 @@ let isSpamming = true;
 let webhookClient = null;
 
 function initWebhook() {
-    if (!webhookClient && config.AutoSpammer.webhookUrl) {
+    if (!webhookClient && config.AutoSpammer.webhookEnabled && config.AutoSpammer.webhookUrl) {
         webhookClient = new WebhookClient({ url: config.AutoSpammer.webhookUrl });
     }
 }
